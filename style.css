@@ -1,0 +1,55 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  background: #ff6600;
+  color: white;
+  padding: 2rem 1rem;
+}
+
+.photo-profil {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .photo-profil {
+    width: 100px;
+    height: 100px;
+  }
+}
