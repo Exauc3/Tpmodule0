@@ -1,17 +1,4 @@
-/*  Défilement fluide */
-
-/* réglage centralisé de la hauteur du header */
-:root {
-  --header-height: 140px; /* valeur par défaut (desktop) -> ajuste si besoin */
-}
-
-/* Défilement fluide + offset pour ancres */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--header-height);
-}
-
-/*  Style global */
+/* Style global */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -19,37 +6,22 @@ body {
   color: #333;
   line-height: 1.6;
   transition: background 0.5s ease, color 0.5s ease;
-  padding-top: var(--header-height); /* évite que le header cache le contenu */
 }
 
-/*  En-tête fixe et translucide (hauteur contrôlée) */
+/* En-tête */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--header-height); /* important : hauteur fixe contrôlée par la variable */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  background: rgba(255, 102, 0, 0.95);
-  backdrop-filter: blur(6px);
+  background: linear-gradient(135deg, #ff6600, #ff8533);
   color: white;
-  padding: 0 1rem; /* padding horizontal uniquement, hauteur gérée par --header-height */
+  padding: 2rem 1rem;
   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
   animation: fadeIn 1s ease-in;
-  z-index: 1000;
-  gap: 6px;
 }
-
-
 
 /* Photo de profil */
 .photo-profil {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid white;
@@ -62,10 +34,6 @@ header {
 }
 
 /* Liens de navigation */
-nav {
-  margin-top: 1rem;
-}
-
 nav a {
   margin: 0 10px;
   color: white;
@@ -75,7 +43,7 @@ nav a {
   transition: color 0.3s ease;
 }
 
-/* Effet de soulignement animé */
+/* Effet soulignement animé */
 nav a::after {
   content: "";
   position: absolute;
@@ -91,7 +59,7 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* Sections avec effet verre */
+/* Sections avec effet "verre" */
 section {
   max-width: 800px;
   margin: 2rem auto;
@@ -124,13 +92,8 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
-
+/* Responsive Design */
 @media (max-width: 600px) {
-  :root {
-    --header-height: 220px; /* header plus haut sur mobile (photo + textes empilés) */
-  }
-
   nav {
     display: flex;
     flex-direction: column;
@@ -138,8 +101,8 @@ footer {
   }
 
   .photo-profil {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
   }
 
   section {
@@ -148,7 +111,7 @@ footer {
   }
 }
 
-/* Mode sombre */
+/* Mode sombre automatique */
 @media (prefers-color-scheme: dark) {
   body {
     background: #121212;
@@ -161,7 +124,7 @@ footer {
   }
 
   header {
-    background: rgba(204, 82, 0, 0.9);
+    background: linear-gradient(135deg, #ff6600, #cc5200);
   }
 
   footer {
